@@ -223,10 +223,13 @@ pub async fn run() {
             state.update();
             match state.render() {
                 Ok(_) => {}
+                // 如果发生上下文丢失，就重新配置 surface
                 Err(wgpu::SurfaceError::Lost | wgpu::SurfaceError::Outdated) => {
                     state.resize(state.size)
                 }
+                // 超出内存 则退出
                 Err(wgpu::SurfaceError::OutOfMemory) => *control_flow = ControlFlow::Exit,
+                // 超时在下一帧解决
                 Err(wgpu::SurfaceError::Timeout) => log::warn!("Surface timeout"),
             }
         }
