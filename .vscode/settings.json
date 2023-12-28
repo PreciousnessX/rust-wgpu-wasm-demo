@@ -1,5 +1,10 @@
 {
     "rust-analyzer.diagnostics.disabled": [
         "missing-unsafe"
+    ],
+    "rust-analyzer.linkedProjects": [
+        "./bevy-web/Cargo.toml",
+        "./bevy-web/Cargo.toml",
+        "./bevy-web/Cargo.toml"
     ]
 }
