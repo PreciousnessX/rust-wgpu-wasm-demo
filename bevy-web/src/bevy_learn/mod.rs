@@ -6,12 +6,13 @@ use bevy::{
 use std::f32::consts::PI;
 
 pub fn bevy_learn_run(s: String) {
+    // 设置插件
+    let diy_default_plugin = DefaultPlugins
+        .set(get_diy_window_plugin(s))
+        .set(ImagePlugin::default_nearest());
+
     App::new()
-        .add_plugins(
-            DefaultPlugins
-                .set(get_diy_window_plugin(s))
-                .set(ImagePlugin::default_nearest()),
-        )
+        .add_plugins(diy_default_plugin)
         .add_systems(Startup, setup)
         .add_systems(Update, rotate)
         .run();
@@ -19,28 +20,9 @@ pub fn bevy_learn_run(s: String) {
 
 fn get_diy_window(id_selector: String) -> Window {
     Window {
-        title: "App".to_owned(),
-        cursor: Default::default(),
-        present_mode: Default::default(),
-        mode: Default::default(),
-        position: Default::default(),
-        resolution: Default::default(),
-        internal: Default::default(),
-        composite_alpha_mode: Default::default(),
-        resize_constraints: Default::default(),
-        ime_enabled: Default::default(),
-        ime_position: Default::default(),
-        resizable: true,
-        enabled_buttons: Default::default(),
-        decorations: true,
-        transparent: false,
-        focused: true,
-        window_level: Default::default(),
         fit_canvas_to_parent: true,
-        prevent_default_event_handling: true,
         canvas: Some(id_selector),
-        window_theme: None,
-        visible: true,
+        ..default()
     }
 }
 

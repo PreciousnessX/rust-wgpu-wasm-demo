@@ -7,7 +7,7 @@ use web_sys::{Element, HtmlCanvasElement};
 mod bevy_learn;
 mod utils;
 
-pub use crate::{bevy_learn::*, utils::set_panic_hook};
+pub use crate::utils::set_panic_hook;
 
 #[wasm_bindgen]
 pub fn init_warp(id: &str, class_name: &str) -> Result<(), JsValue> {
@@ -44,7 +44,7 @@ pub fn init_warp(id: &str, class_name: &str) -> Result<(), JsValue> {
 
     let id_selector = format!("#{}", canvas.id());
     println!("id_selector:{}", id_selector);
-    bevy_learn_run(id_selector);
+    bevy_learn::bevy_learn_run(id_selector);
 
     Ok(())
 }
