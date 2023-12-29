@@ -9,7 +9,7 @@ edition = "2021"
 crate-type = ["cdylib", "rlib"]
 
 [dependencies]
-bevy = "0.11.2"
+bevy = "0.12.1"
 
 # wasm-bindgen实现了Rust和JavaScript之间的高级别互操作。 它允许将JavaScript的内容导入到Rust和将Rust内容导出给JavaScript。
 wasm-bindgen = "0.2.87" 
@@ -33,6 +33,10 @@ console_log = "1.0"
 
 # Wasm-Enabled, Elfin 分配器。 一个小的（~1K未压缩的.wasm）分配器实现，用在代码尺寸比分配性能更受关注的时候。
 wee_alloc = { version = "0.4.5", optional = true }
+
+# 生成随机id
+uuid = "1.6.1"
+
 
 [dependencies.web-sys]
 version = "0.3.61"

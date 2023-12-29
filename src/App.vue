@@ -11,7 +11,7 @@ import {onMounted}from 'vue'
 
 import * as wasm from '../bevy-web/pkg/bevy_web'
 onMounted(()=>{
-    wasm.init_warp('gpu-warp','aaa');
+    wasm.init_warp('gpu-warp','canvas-warp');
 })
 
 </script>
