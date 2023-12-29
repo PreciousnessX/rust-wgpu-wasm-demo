@@ -2,13 +2,12 @@
 //! The scene includes a patterned texture and a rotation for visualizing the normals and UVs.
 use uuid::Uuid;
 use wasm_bindgen::prelude::*;
-use web_sys::{Element, HtmlCanvasElement, HtmlDivElement};
+use web_sys::{Element, HtmlCanvasElement};
 
 mod bevy_learn;
-mod shaps;
 mod utils;
 
-pub use crate::{bevy_learn::*, shaps::run, utils::set_panic_hook};
+pub use crate::{bevy_learn::*, utils::set_panic_hook};
 
 #[wasm_bindgen]
 pub fn init_warp(id: &str, class_name: &str) -> Result<(), JsValue> {

@@ -20,6 +20,8 @@ onMounted(()=>{
 .app-warp{
     width: 100%;
     height: 100%;
+    padding: 40px;
+    box-sizing: border-box;
     .gpu-warp{
         width: 100%;
         height: 100%;
